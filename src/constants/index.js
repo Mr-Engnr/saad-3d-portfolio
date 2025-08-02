@@ -15,14 +15,16 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
+  acmUet,
+  exarta,
   carrent,
   jobit,
   tripguide,
   threejs,
+  frontendEngineer,
+  dataAnalyst,
+  mlEngineer,
+  cloudEngineer,
 } from "../assets";
 
 export const navLinks = [
@@ -42,20 +44,20 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
-    icon: web,
+    title: "Front-End Engineer",
+    icon: frontendEngineer,
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
+    title: "Data Analyst",
+    icon: dataAnalyst,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    title: "ML Engineer",
+    icon: mlEngineer,
   },
   {
-    title: "Content Creator",
-    icon: creator,
+    title: "Cloud Engineer",
+    icon: cloudEngineer,
   },
 ];
 
@@ -116,57 +118,31 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "Cloud Engineer Trainee",
+    company_name: "ACM UET Lahore",
+    icon: acmUet,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Jul 2024 - Sep 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Gained hands-on experience with AWS services including EC2, S3, Lambda, and RDS.",
+      "Automated an end-to-end ETL workflow using AWS Lambda to move 100+ daily records (JSON, CSV, SQL) from S3 to Redshift.",
+      "Reduced manual processing time by 70% through automation.",
+      "Enabled business insights by delivering clean data to Power BI dashboards via automated pipelines.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "Campus Ambassador",
+    company_name: "Exarta Labs",
+    icon: exarta,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Feb 2025 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Promoted Exarta's AI and 3D e-commerce apps (Zeniva AI, Odyssey3D) to over 200+ students through online and on-campus outreach.",
+      "Supported beta testing for PODS, providing actionable feedback that improved UI/UX before release.",
+      "Helped increase early sign-ups and engagement by 15% via targeted awareness campaigns and product demos.",
     ],
   },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
+
 ];
 
 const testimonials = [
