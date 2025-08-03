@@ -1,38 +1,11 @@
-import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  acmUet,
-  exarta,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
-  frontendEngineer,
-  dataAnalyst,
-  mlEngineer,
-  cloudEngineer,
-} from "../assets";
 
-// Import project images
-import cnnFighter from "../assets/projects/cnn-fighter.png";
-import gameBidding from "../assets/projects/game-bidding.jpeg";
-import chicago from "../assets/projects/chicago.png";
-import cisco from "../assets/projects/cisco.png";
-import awsDataSolution from "../assets/projects/aws-data-solution.png";
+
+// Import project images - using public paths
+const cnnFighter = "/assets/cnn-fighter.png";
+const gameBidding = "/assets/game-bidding.jpeg";
+const chicago = "/assets/chicago.png";
+const cisco = "/assets/cisco.png";
+const awsDataSolution = "/assets/aws-data-solution.png";
 
 
 export const navLinks = [
@@ -53,19 +26,19 @@ export const navLinks = [
 const services = [
   {
     title: "Front-End Engineer",
-    icon: frontendEngineer,
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
   },
   {
     title: "Data Analyst",
-    icon: dataAnalyst,
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
   },
   {
     title: "ML Engineer",
-    icon: mlEngineer,
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
   },
   {
     title: "Cloud Engineer",
-    icon: cloudEngineer,
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
   },
 ];
 
