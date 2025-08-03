@@ -28,6 +28,13 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+// Import project images
+import cnnFighter from "./projects/cnn-fighter.png";
+import gameBidding from "./projects/game-bidding.jpeg";
+import chicago from "./projects/chicago.png";
+import cisco from "./projects/cisco.png";
+import awsDataSolution from "./projects/aws-data-solution.png";
+
 // Custom service icons
 import frontendEngineer from "./tech/reactjs.png"; // Using React icon
 import dataAnalyst from "./custom/Pandas.svg?url";
@@ -65,4 +72,10 @@ export {
   dataAnalyst,
   mlEngineer,
   cloudEngineer,
+  // Export project images
+  cnnFighter,
+  gameBidding,
+  chicago,
+  cisco,
+  awsDataSolution,
 };

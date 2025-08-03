@@ -27,6 +27,12 @@ import {
   cloudEngineer,
 } from "../assets";
 
+// Import project images
+import cnnFighter from "../assets/projects/cnn-fighter.png";
+import gameBidding from "../assets/projects/game-bidding.jpeg";
+import chicago from "../assets/projects/chicago.png";
+import cisco from "../assets/projects/cisco.png";
+import awsDataSolution from "../assets/projects/aws-data-solution.png";
 
 
 export const navLinks = [
@@ -176,7 +182,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/assets/cnn-fighter.png",
+    image: cnnFighter,
     source_code_link: "https://github.com/Mr-Engnr/fighterjet-cnn-classifier",
   },
   {
@@ -197,7 +203,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/assets/game-bidding.jpeg",
+    image: gameBidding,
     source_code_link: "https://github.com/Mr-Engnr/game-bidding-platform",
   },
   {
@@ -218,7 +224,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/assets/chicago.png",
+    image: chicago,
     source_code_link: "https://github.com/Mr-Engnr/chicago-crime-etl",
   },
   {
@@ -239,7 +245,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/assets/cisco.png",
+    image: cisco,
     source_code_link: "https://drive.google.com/drive/folders/1ItlTgba5bN4Yqpol6YGLm_LpkWXPISPN?usp=sharing",
   },
   {
@@ -260,7 +266,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/assets/aws-data-solution.png",
+    image: awsDataSolution,
     source_code_link: "https://drive.google.com/file/d/18jDXEx8sc_0sFcKDsXNtfu2gJ7KEzcjt/view?usp=drive_link",
   },
 ];
