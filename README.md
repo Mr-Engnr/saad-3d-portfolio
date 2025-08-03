@@ -139,7 +139,7 @@ A modern, responsive 3D portfolio website built with React, Three.js, and Tailwi
 
 ## 📧 Contact
 
-- **Email:** ranasaad727@gmai.com
+- **Email:** ranasaad727@gmail.com
 
 ## 🚀 Deployment
 
