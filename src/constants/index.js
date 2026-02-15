@@ -1,12 +1,13 @@
+// Project images as public URLs with base URL support
+const cnnFighter = import.meta.env.BASE_URL + 'assets/cnn-fighter.png';
+const gameBidding = import.meta.env.BASE_URL + 'assets/game-bidding.jpeg';
+const chicago = import.meta.env.BASE_URL + 'assets/chicago.png';
+const cisco = import.meta.env.BASE_URL + 'assets/cisco.png';
+const awsDataSolution = import.meta.env.BASE_URL + 'assets/aws-data-solution.png';
 
-
-// Import project images - using public paths
-const cnnFighter = "/assets/cnn-fighter.png";
-const gameBidding = "/assets/game-bidding.jpeg";
-const chicago = "/assets/chicago.png";
-const cisco = "/assets/cisco.png";
-const awsDataSolution = "/assets/aws-data-solution.png";
-
+// Company logos as public URLs with base URL support
+const acmUet = import.meta.env.BASE_URL + 'assets/company/acm-uet.png';
+const exarta = import.meta.env.BASE_URL + 'assets/company/exarta.png';
 
 export const navLinks = [
   {

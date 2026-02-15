@@ -62,7 +62,7 @@ const Navbar = () => {
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
           <img
-            src={toggle ? "/close.svg" : "/menu.svg"}
+            src={toggle ? import.meta.env.BASE_URL + 'assets/close.svg' : import.meta.env.BASE_URL + 'assets/menu.svg'}
             alt='menu'
             className='w-[28px] h-[28px] object-contain'
             onClick={() => setToggle(!toggle)}
