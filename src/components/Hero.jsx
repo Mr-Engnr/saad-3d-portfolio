@@ -9,7 +9,7 @@ const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [jobIndex, setJobIndex] = useState(0);
   
-  const jobs = ["web developer", "ML engineer", "cloud engineer"];
+  const jobs = ["AI Agents Engineer", "ML Engineer", "Data Analyst", "Cloud Engineer", "Web Developer"];
   const currentJob = jobs[jobIndex];
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const Hero = () => {
             Hi, I'm <span className='text-[#915EFF]'>Saad</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            A multidisciplinary engineer passionate about building intelligent and scalable solutions.
+            AI agents. Automated workflows. Data-driven decisions. That's my stack.
           </p>
           <p className={`${styles.heroSubText} mt-4 text-white-100`}>
             I am a{" "}
