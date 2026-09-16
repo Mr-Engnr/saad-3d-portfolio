@@ -1,11 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-import App from "./App";
 import "./index.css";
+import { initializeNavigation } from "./navigation";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// React authors the page and renders it at build time. Production only needs
+// the native menu enhancement; it does not download or hydrate React.
+if (import.meta.env.DEV) {
+  import("./development.jsx");
+} else {
+  initializeNavigation();
+}

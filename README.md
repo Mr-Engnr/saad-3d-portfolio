@@ -1,180 +1,50 @@
-# Saad's 3D Portfolio
+# Rana Saad Safdar — Portfolio V2
 
-<div align="center">
-  <br />
-  <h3 align="center">A Modern 3D Developer Portfolio</h3>
-  <br />
+A minimal, client-first portfolio authored with React, Vite, and CSS. Production builds include static HTML and a small native-menu enhancement. React runs during development and build time only; it is not shipped to visitors. Content and navigation also work without JavaScript. No WebGL or animation library is used.
 
-  <div>
-    <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
-    <img src="https://img.shields.io/badge/-Three_JS-black?style=for-the-badge&logoColor=white&logo=threedotjs&color=000000" alt="three.js" />
-    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
-  </div>
-</div>
+## Local development
 
-## 🚀 Live Demo
+Requires Node.js 20.19+ or 22.12+ (the supported Vite Node.js release lines).
 
-[View Live Portfolio](https://mr-engnr.github.io/react-3d-portfolio)
+```sh
+npm install
+npm run dev
+```
 
-## 📋 Table of Contents
+Open http://127.0.0.1:5173.
 
-1. [Introduction](#introduction)
-2. [Tech Stack](#tech-stack)
-3. [Features](#features)
-4. [Projects Showcased](#projects-showcased)
-5. [Installation](#installation)
-6. [Contact](#contact)
+## Production preview
 
-## 🤖 Introduction
+```sh
+npm run build
+npm run preview
+```
 
-A modern, responsive 3D portfolio website built with React, Three.js, and Tailwind CSS. This portfolio showcases my skills as a multidisciplinary engineer with expertise in web development, machine learning, data engineering, and cloud architecture.
+The preview path follows the production URL in `src/site.js`. With the current production URL, open http://127.0.0.1:4173/.
 
-## ⚙️ Tech Stack
+## Content
 
-### Frontend Development
-- **HTML5** - Semantic markup
-- **CSS3** - Styling and animations
-- **JavaScript** - Core functionality
-- **React JS** - Component-based architecture
-- **Redux Toolkit** - State management
-- **Tailwind CSS** - Utility-first CSS framework
+- `src/site.js`: name, production URL, email, GitHub, optional LinkedIn and resume.
+- `src/constants/index.js`: client work, technical projects, and experience.
+- `src/components/`: page sections.
+- `src/index.css`: responsive layout and design tokens.
+- `public/images/`: optimized project previews.
+- `src/assets/projects/`: retained original technical project images.
 
-### Backend & Data
-- **Node.js** - Server-side JavaScript
-- **MongoDB** - NoSQL database
-- **Python** - Data processing and ML
-- **Pandas** - Data manipulation
-- **Anaconda** - Python environment management
+The production URL is taken from the public GitHub repository homepage and was verified to serve the current portfolio. LinkedIn uses the profile supplied by the owner. Resume actions open `public/Saad_Resume.pdf` directly. Client contribution text is owner-provided.
 
-### Machine Learning & Cloud
-- **TensorFlow** - Deep learning framework
-- **AWS** - Cloud services and infrastructure
-- **Docker** - Containerization
-- **Git** - Version control
+Client screenshots were captured from their public websites for this portfolio. Descriptions identify the products; they do not claim an unverified technology stack, responsibility, or business outcome. Update screenshots and descriptions when those sites change.
 
-## 🔋 Features
+The Hydroponics project is published first in Engineering Projects. Its native Project details disclosure includes the prototype, architecture, hardware, and dashboard photographs. Image provenance is documented in src/assets/projects/hydroponics/README.md.
 
-### 🎨 Interactive 3D Elements
-- **3D Hero Section** - Animated typing effect with role transitions
-- **3D Technology Balls** - Interactive skill visualization
-- **3D Earth Model** - Contact section with floating globe
-- **3D Stars Background** - Dynamic star field animation
+## Build and SEO
 
-### 📱 Responsive Design
-- **Mobile-First Approach** - Optimized for all devices
-- **Smooth Animations** - Framer Motion powered transitions
-- **Modern UI/UX** - Clean, professional design
+`npm run build` builds the client bundle and prerenders the full React page. Metadata and JSON-LD derive from `src/site.js`. The build regenerates `public/robots.txt` and `public/sitemap.xml` from the same URL. If hosting under a path, publish robots.txt at the origin root as well where hosting permits.
 
-### 📧 Contact Integration
-- **EmailJS Integration** - Direct email functionality
-- **Form Validation** - User-friendly error handling
-- **Real-time Feedback** - Loading states and success messages
+The production artifact is `dist/`. The old tracked `docs/` build and unused assets are preserved under `archive/legacy/`, outside the production build. Configure the host to build with `npm run build` and serve `dist/`; do not deploy until the domain and content are approved.
 
-### 🎯 Project Showcase
-- **Interactive Project Cards** - Hover effects and animations
-- **GitHub Integration** - Direct links to source code
-- **Live Demo Links** - Working project demonstrations
+Images use local WebP variants, fixed dimensions, and lazy loading. Inter is self-hosted with its OFL license. The hero has no image dependency. Reduced-motion preferences disable transitions and smooth scrolling.
 
-## 🚀 Projects Showcased
+Contact uses a mailto link to the email already documented in this repository; no EmailJS configuration is used or bundled. Existing private environment files remain local.
 
-### 1. Fighter Jet CNN Classifier
-- **Description:** Deep learning classifier that detects fighter jets using Convolutional Neural Networks
-- **Tech:** TensorFlow, Python, Streamlit
-- **GitHub:** [View Project](https://github.com/Mr-Engnr/fighterjet-cnn-classifier)
-
-### 2. Game Bidding Platform
-- **Description:** Full-stack web application that blends online gaming with real-time bidding
-- **Tech:** React, SQL Server, REST APIs
-- **GitHub:** [View Project](https://github.com/Mr-Engnr/game-bidding-platform)
-
-### 3. Chicago Crime ETL Pipeline
-- **Description:** Data engineering project focused on transforming 1.4M+ crime records into actionable insights
-- **Tech:** Python, ETL, Power BI
-- **GitHub:** [View Project](https://github.com/Mr-Engnr/chicago-crime-etl)
-
-### 4. Enterprise Network Architecture
-- **Description:** Secure, multi-VLAN, multi-area OSPF network with advanced constraints
-- **Tech:** Cisco, Networking, OSPF
-- **Documentation:** [View Project](https://drive.google.com/drive/folders/1ItlTgba5bN4Yqpol6YGLm_LpkWXPISPN?usp=sharing)
-
-### 5. End-to-End Data Solution (AWS)
-- **Description:** Complete data pipeline using AWS services for processing, storing, and visualizing data
-- **Tech:** AWS Lambda, S3, Redshift, Power BI
-- **Documentation:** [View Project](https://drive.google.com/file/d/18jDXEx8sc_0sFcKDsXNtfu2gJ7KEzcjt/view?usp=drive_link)
-
-## 🛠️ Installation
-
-### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
-
-### Setup Instructions
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Mr-Engnr/react-3d-portfolio.git
-   cd react-3d-portfolio
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-   Create a `.env` file in the root directory:
-   ```env
-   VITE_APP_EMAILJS_SERVICE_ID=your_service_id
-   VITE_APP_EMAILJS_TEMPLATE_ID=your_template_id
-   VITE_APP_EMAILJS_PUBLIC_KEY=your_public_key
-   ```
-
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser**
-   Navigate to `http://localhost:5173`
-
-## 📧 Contact
-
-- **Email:** ranasaad727@gmail.com
-
-## 🚀 Deployment
-
-This portfolio is deployed using GitHub Pages. To deploy your own version:
-
-1. **Update package.json**
-   ```json
-   {
-     "homepage": "https://your-username.github.io/your-repo-name",
-     "scripts": {
-       "predeploy": "npm run build",
-       "deploy": "gh-pages -d dist"
-     }
-   }
-   ```
-
-2. **Update vite.config.js**
-   ```javascript
-   export default defineConfig({
-     base: '/your-repo-name/',
-     // ... other config
-   })
-   ```
-
-3. **Deploy**
-   ```bash
-   npm run deploy
-   ```
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-<div align="center">
-  <p>Built with ❤️ by Saad</p>
-</div>
+No ESLint configuration existed in the original repository.
