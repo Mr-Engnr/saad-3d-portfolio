@@ -1,16 +1,5 @@
 export const clientProjects = [
   {
-    name: "AI InterConnect",
-    slug: "ai-interconnect",
-    contribution:
-      "Converted an existing GoHighLevel drag-and-drop website into a standalone HTML website and deployed it on LeadEngine.",
-    url: "https://www.aiinterconnect.com/",
-    domain: "aiinterconnect.com",
-    category: "AI / B2B growth",
-    description:
-      "A business website presenting AI-powered outreach, sales workflows, and go-to-market services for B2B companies.",
-  },
-  {
     name: "SusuKonnect",
     slug: "susukonnect",
     contribution:
@@ -31,6 +20,17 @@ export const clientProjects = [
     category: "AI / Digital media",
     description:
       "An editorial website presenting film series, characters, and story timelines for an AI film brand.",
+  },
+  {
+    name: "AI InterConnect",
+    slug: "ai-interconnect",
+    contribution:
+      "Converted an existing GoHighLevel drag-and-drop website into a standalone HTML website and deployed it on LeadEngine.",
+    url: "https://www.aiinterconnect.com/",
+    domain: "aiinterconnect.com",
+    category: "AI / B2B growth",
+    description:
+      "A business website presenting AI-powered outreach, sales workflows, and go-to-market services for B2B companies.",
   },
 ];
 
