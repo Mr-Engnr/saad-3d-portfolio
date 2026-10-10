@@ -1,4 +1,6 @@
 import { Arrow, SocialLinks } from "./Shared";
+import { reviewSummary } from "../constants";
+import { site } from "../site";
 export default function Hero() {
   return (
     <section className="hero container" id="top" aria-labelledby="hero-title">
@@ -21,18 +23,28 @@ export default function Hero() {
               View my work
               <Arrow diagonal={false} />
             </a>
-            <a className="button button-quiet" href="#contact">
-              Let's talk
+            <a
+              className="button button-quiet"
+              href={site.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Book a call (opens in a new tab)"
+            >
+              Book a call
               <Arrow />
             </a>
           </div>
         </div>
         <div className="hero-aside">
-          <p>
-            From a useful idea
-            <br />
-            to a working system.
-          </p>
+          <a className="hero-proof" href="#reviews">
+            <span className="stars" aria-hidden="true">
+              ★★★★★
+            </span>
+            <span>
+              {reviewSummary.average} average across {reviewSummary.count}{" "}
+              {reviewSummary.platform} reviews
+            </span>
+          </a>
           <SocialLinks resume />
         </div>
       </div>

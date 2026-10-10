@@ -39,6 +39,7 @@ export function SocialLinks({ resume = false }) {
       {site.linkedin && (
         <ExternalLink href={site.linkedin}>LinkedIn</ExternalLink>
       )}
+      {site.fiverr && <ExternalLink href={site.fiverr}>Fiverr</ExternalLink>}
       {resume && <ExternalLink href={site.resume}>Resume</ExternalLink>}
     </div>
   );

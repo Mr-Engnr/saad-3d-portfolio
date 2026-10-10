@@ -1,4 +1,5 @@
 import { SectionHeading } from "./Shared";
+import { asset } from "../site";
 export default function About() {
   return (
     <section
@@ -12,6 +13,17 @@ export default function About() {
             number="05"
             title="An engineering foundation."
             id="about-title"
+          />
+          <img
+            className="about-portrait"
+            src={asset("images/portrait-640.webp")}
+            srcSet={`${asset("images/portrait-320.webp")} 320w, ${asset("images/portrait-640.webp")} 640w, ${asset("images/portrait-960.webp")} 960w`}
+            sizes="(max-width: 767px) 160px, 300px"
+            width="640"
+            height="640"
+            loading="lazy"
+            decoding="async"
+            alt="Portrait of Rana Saad Safdar"
           />
           <dl className="about-facts">
             <div>
