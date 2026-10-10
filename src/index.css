@@ -318,18 +318,32 @@ ul {
 }
 .hero-proof {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 22px;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 24px;
   transition: color 0.18s;
 }
 .hero-proof:hover {
-  color: var(--text);
+  color: var(--accent);
+}
+.hero-proof > span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 .hero-proof .stars {
   font-size: 12px;
+}
+.hero-portrait {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
 }
 .social-links {
   display: flex;

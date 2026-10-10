@@ -1,6 +1,6 @@
 import { Arrow, SocialLinks } from "./Shared";
 import { reviewSummary } from "../constants";
-import { site } from "../site";
+import { site, asset } from "../site";
 export default function Hero() {
   return (
     <section className="hero container" id="top" aria-labelledby="hero-title">
@@ -37,10 +37,18 @@ export default function Hero() {
         </div>
         <div className="hero-aside">
           <a className="hero-proof" href="#reviews">
-            <span className="stars" aria-hidden="true">
-              ★★★★★
-            </span>
+            <img
+              className="hero-portrait"
+              src={asset("images/portrait-320.webp")}
+              width="320"
+              height="320"
+              alt=""
+              decoding="async"
+            />
             <span>
+              <span className="stars" aria-hidden="true">
+                ★★★★★
+              </span>
               {reviewSummary.average} average across {reviewSummary.count}{" "}
               {reviewSummary.platform} reviews
             </span>
