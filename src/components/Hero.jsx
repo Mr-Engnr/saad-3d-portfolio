@@ -8,15 +8,15 @@ export default function Hero() {
         Computer engineer <span aria-hidden="true">·</span> AI & Automation
       </p>
       <h1 id="hero-title">
-        AI systems that
-        <br /> solve <span>real problems.</span>
+        I build AI agents
+        <br /> and teach you to <span>ship your own.</span>
       </h1>
       <div className="hero-bottom">
         <div>
           <p className="hero-description">
-            I'm Saad Safdar, an AI & Automation Engineer building AI agents,
-            intelligent workflows, machine learning systems, and data-driven
-            products.
+            I'm Saad Safdar, an AI & Automation Engineer. I build AI agents,
+            automated workflows, and web apps for clients, and I coach founders
+            through building their own with Claude Code.
           </p>
           <div className="hero-ctas">
             <a className="button button-primary" href="#work">

@@ -52,8 +52,8 @@ export default function About() {
             pieces work together, and keep the result useful.
           </p>
           <p className="about-note">
-            Interested in engineering roles, client collaborations, and graduate
-            or research opportunities.
+            Currently taking on client projects and one-to-one build sessions.
+            Open to full-time AI engineering roles as well.
           </p>
         </div>
       </div>
