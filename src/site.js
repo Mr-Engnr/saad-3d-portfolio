@@ -10,6 +10,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/rana-saad-safdar/",
   resume: "/Saad_Resume.pdf",
   // Public Fiverr profile URL. Leave empty to hide the "Verified on Fiverr" link.
-  fiverr: "",
+  fiverr: "https://www.fiverr.com/s/Dmm29ka",
+  calendly: "https://calendly.com/engnr-saad/project-discussion",
 };
 export const asset = (path) => `${import.meta.env.BASE_URL}${path}`;

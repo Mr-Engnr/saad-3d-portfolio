@@ -19,6 +19,18 @@ export default function Contact() {
             {site.email}
             <Arrow />
           </a>
+          <div className="contact-ctas">
+            <a
+              className="button button-primary"
+              href={site.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Book a project discussion call (opens in a new tab)"
+            >
+              Book a project call
+              <Arrow />
+            </a>
+          </div>
         </div>
         <SocialLinks />
       </div>

@@ -315,6 +315,21 @@ ul {
   color: var(--muted);
   margin-bottom: 25px;
 }
+.hero-proof {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 22px;
+  transition: color 0.18s;
+}
+.hero-proof:hover {
+  color: var(--text);
+}
+.hero-proof .stars {
+  font-size: 12px;
+}
 .social-links {
   display: flex;
   flex-wrap: wrap;
@@ -709,6 +724,13 @@ ul {
   grid-template-columns: 1fr 1.3fr;
   gap: 72px;
 }
+.about-portrait {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  margin-bottom: 28px;
+}
 .about-facts {
   margin: 0;
   padding-top: 20px;
@@ -766,6 +788,12 @@ ul {
 .contact-bottom p {
   color: var(--muted);
   font-size: 15px;
+}
+.contact-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
 }
 .contact-email {
   display: inline-flex;
@@ -1016,8 +1044,8 @@ ul {
     max-width: none;
     margin-top: 28px;
   }
-  .hero-aside > p {
-    display: none;
+  .hero-proof {
+    margin-bottom: 18px;
   }
   .hero-ctas {
     margin-top: 24px;
@@ -1150,6 +1178,10 @@ ul {
   }
   .about-copy .about-lead {
     font-size: 21px;
+  }
+  .about-portrait {
+    width: 160px;
+    margin-bottom: 20px;
   }
   .contact-section h2 {
     font-size: clamp(40px, 8.5vw, 60px);
