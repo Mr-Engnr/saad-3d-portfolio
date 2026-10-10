@@ -284,3 +284,91 @@ export const experiences = [
     ],
   },
 ];
+
+// Client reviews quoted from the owner's public Fiverr profile. Text is
+// verbatim; longer reviews are trimmed to an opening excerpt. Reviews left by
+// the owner's own account are intentionally excluded.
+export const reviewSummary = {
+  count: 43,
+  average: "4.9",
+  platform: "Fiverr",
+};
+export const reviews = [
+  {
+    name: "annatambini",
+    country: "United States",
+    rating: 5,
+    gig: "AI web application",
+    quote:
+      "Saad exceeded my expectations from start to finish. His expertise in AI and web development is outstanding. He helped me build a web application using Claude AI with ChatGPT API integration.",
+  },
+  {
+    name: "violetquark",
+    country: "United States",
+    rating: 5,
+    gig: "Job search automation",
+    quote:
+      "I hired Saad to set up an automated job search workflow, and it's the best investment I've made in my search.",
+  },
+  {
+    name: "conakry224",
+    country: "United States",
+    rating: 5,
+    gig: "Fintech startup website",
+    quote:
+      "Saad was very helpful in walking me through step by step by creating a website for my Fintech startup and deploying it using Claude and Render.",
+  },
+  {
+    name: "sambadaoui",
+    country: "Netherlands",
+    rating: 5,
+    gig: "AI coaching",
+    quote:
+      "Saad is amazingly knowledgeable in AI. He is also a very good communicator, which helps me to accelerate my objectives even more.",
+  },
+  {
+    name: "georgex9",
+    country: "Greece",
+    rating: 5,
+    gig: "Repeat client",
+    quote:
+      "Very good developer! Has helped me in lot of projects, I will work with him again!",
+  },
+  {
+    name: "violetquark",
+    country: "United States",
+    rating: 5,
+    gig: "Second brain system",
+    quote:
+      "He went through everything step by step with me and explained how the system works.",
+  },
+  {
+    name: "ilange405",
+    country: "Israel",
+    rating: 5,
+    gig: "AI integrations",
+    quote: "Exceptional delivery, great experience. Thank you.",
+  },
+  {
+    name: "lienerschnitzel",
+    country: "United States",
+    rating: 5,
+    gig: "Claude coaching",
+    quote: "Thank you for your patience and deep knowledge of Claude!",
+  },
+  {
+    name: "juliocarrizales",
+    country: "United States",
+    rating: 5,
+    gig: "Coding sessions",
+    quote:
+      "Working with Saad was great! Awesome to work and extremely knowledgeable!",
+  },
+  {
+    name: "jonmatrix",
+    country: "Poland",
+    rating: 5,
+    gig: "Coding sessions",
+    quote: "Great teacher! Will definitely do more sessions together.",
+  },
+];

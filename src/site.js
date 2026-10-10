@@ -9,5 +9,7 @@ export const site = {
   github: "https://github.com/Mr-Engnr",
   linkedin: "https://www.linkedin.com/in/rana-saad-safdar/",
   resume: "/Saad_Resume.pdf",
+  // Public Fiverr profile URL. Leave empty to hide the "Verified on Fiverr" link.
+  fiverr: "",
 };
 export const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
