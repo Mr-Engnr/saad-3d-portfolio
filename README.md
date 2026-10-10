@@ -31,7 +31,7 @@ The preview path follows the production URL in `src/site.js`. With the current p
 - `public/images/`: optimized project previews.
 - `src/assets/projects/`: retained original technical project images.
 
-The production URL is taken from the public GitHub repository homepage and was verified to serve the current portfolio. LinkedIn uses the profile supplied by the owner. Resume actions open `public/Saad_Resume.pdf` directly. Client contribution text is owner-provided.
+The production URL is the custom domain https://saadsafdar.dev/, configured in `src/site.js`; the Vercel default hostname should redirect to it. LinkedIn uses the profile supplied by the owner. Resume actions open `public/Saad_Resume.pdf` directly. Client contribution text is owner-provided.
 
 Client screenshots were captured from their public websites for this portfolio. Descriptions identify the products; they do not claim an unverified technology stack, responsibility, or business outcome. Update screenshots and descriptions when those sites change.
 

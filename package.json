@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://s-00-one.vercel.app/",
+  "homepage": "https://saadsafdar.dev/",
   "scripts": {
     "dev": "vite",
     "build": "node scripts/build.mjs",

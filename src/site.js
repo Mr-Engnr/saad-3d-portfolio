@@ -3,8 +3,8 @@ export const site = {
   title: "Rana Saad Safdar | AI & Automation Engineer",
   description:
     "AI & Automation Engineer building AI agents, automated workflows, and web applications for clients, and coaching founders to ship their own with Claude Code.",
-  // Public repository homepage, verified against the live portfolio.
-  url: "https://s-00-one.vercel.app/",
+  // Production origin. Used for canonical, Open Graph, JSON-LD, robots, and sitemap.
+  url: "https://saadsafdar.dev/",
   email: "ranasaad727@gmail.com",
   github: "https://github.com/Mr-Engnr",
   linkedin: "https://www.linkedin.com/in/rana-saad-safdar/",
