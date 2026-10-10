@@ -469,6 +469,10 @@ ul {
 .technical-copy .project-role {
   font-size: 12px;
 }
+.technical-copy .image-caption {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
 .project-role span {
   color: var(--text);
   margin-right: 12px;
@@ -790,6 +794,105 @@ ul {
 .footer .text-link {
   font-size: 11px;
 }
+.testimonials {
+  overflow: hidden;
+}
+.testimonials-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.testimonials-heading .eyebrow {
+  margin-bottom: 18px;
+}
+.testimonials-heading h2 {
+  font-size: clamp(28px, 3.2vw, 40px);
+}
+.review-summary {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 320px;
+  text-align: right;
+}
+.review-summary .text-link {
+  min-height: 0;
+  color: var(--text);
+  gap: 6px;
+}
+.review-summary .text-link svg {
+  width: 14px;
+}
+.marquee {
+  --marquee-gap: 20px;
+  --marquee-duration: 70s;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+.marquee-track {
+  display: flex;
+  gap: var(--marquee-gap);
+  width: max-content;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  animation: marquee var(--marquee-duration) linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-50% - var(--marquee-gap) / 2));
+  }
+}
+.review-card {
+  width: 340px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+}
+.stars {
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+.review-card blockquote {
+  margin: 14px 0 20px;
+  flex: 1;
+}
+.review-card blockquote p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+}
+.review-card footer {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.review-name {
+  font-size: 13px;
+  font-weight: 500;
+}
+.review-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
 @media (min-width: 1440px) {
   .hero {
     padding-top: 112px;
@@ -890,7 +993,7 @@ ul {
     padding-bottom: 56px;
   }
   .hero-eyebrow {
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 0.1em;
     margin-bottom: 26px;
   }
@@ -966,6 +1069,38 @@ ul {
   .preview-caption {
     padding: 10px 12px;
   }
+  .testimonials-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .review-summary {
+    text-align: left;
+    max-width: none;
+  }
+  .marquee {
+    mask-image: none;
+  }
+  .marquee-track {
+    animation: none;
+    width: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-inline: 20px;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+  .marquee-track::-webkit-scrollbar {
+    display: none;
+  }
+  .review-card {
+    width: min(300px, 82vw);
+    scroll-snap-align: start;
+  }
+  .review-card[aria-hidden] {
+    display: none;
+  }
   .technical-grid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -1040,6 +1175,22 @@ ul {
     margin-left: auto;
   }
 }
+@media (max-width: 359px) {
+  .hero h1 {
+    font-size: 40px;
+  }
+  .contact-section h2 {
+    font-size: 36px;
+  }
+  .nav-actions {
+    gap: 8px;
+  }
+}
+@media (min-width: 1920px) {
+  .container {
+    width: min(1320px, calc(100% - 80px));
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1053,6 +1204,18 @@ ul {
   .client-preview:hover,
   .text-link:hover svg {
     transform: none;
+  }
+  .marquee {
+    mask-image: none;
+  }
+  .marquee-track {
+    width: auto;
+    overflow-x: auto;
+    padding-inline: max(20px, calc((100% - 1200px) / 2));
+    padding-bottom: 8px;
+  }
+  .review-card[aria-hidden] {
+    display: none;
   }
 }
 

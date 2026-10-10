@@ -60,7 +60,7 @@ export default function ProjectCard({ project }) {
       )}
       <div className="technical-copy">
         {project.imageCaption && (
-          <p className="project-role">{project.imageCaption}</p>
+          <p className="project-role image-caption">{project.imageCaption}</p>
         )}
         <p className="eyebrow">{project.category}</p>
         <h3>{project.name}</h3>

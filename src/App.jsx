@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ClientWorks from "./components/ClientWorks";
+import Testimonials from "./components/Testimonials";
 import Capabilities from "./components/Capabilities";
 import Works from "./components/Works";
 import AutomationSystems from "./components/AutomationSystems";
@@ -20,6 +21,7 @@ export default function App() {
         <Hero />
         <Capabilities />
         <ClientWorks />
+        <Testimonials />
         <AutomationSystems />
         <Works />
         <Experience />

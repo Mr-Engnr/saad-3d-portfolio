@@ -32,3 +32,6 @@ dist-ssr
 archive/
 
 archive/
+
+# Claude Code local tooling (skills, local settings)
+.claude/
