@@ -20,7 +20,7 @@ const schema = {
     jobTitle: "AI & Automation Engineer",
     description: site.description,
     url: site.url,
-    sameAs: [site.github, site.linkedin].filter(Boolean),
+    sameAs: [site.github, site.linkedin, site.fiverr].filter(Boolean),
   },
 };
 export default defineConfig(({ mode }) => ({
