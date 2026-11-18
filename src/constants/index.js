@@ -294,8 +294,8 @@ export const clientProjects = [
       },
       {
         key: "inner",
-        label: "Packages",
-        alt: "AI InterConnect service packages section with three plan cards",
+        label: "Process",
+        alt: "AI InterConnect process section: a headline beside six numbered steps from target to follow-up",
       },
     ],
   },
