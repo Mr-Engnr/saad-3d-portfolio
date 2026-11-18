@@ -11,7 +11,7 @@ export default function AutomationSystems() {
     >
       <div className="container">
         <SectionHeading
-          number="03"
+          number="04"
           title="AI Automation Systems"
           id="automation-title"
         >

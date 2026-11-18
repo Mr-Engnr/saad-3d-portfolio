@@ -225,20 +225,10 @@ export const aiProducts = [
   },
 ];
 
-// Web builds: client websites, shown in the collapsed "Web builds" row of
-// section 01.
+// Web builds: client websites, shown as three open cards in section 03.
+// Each has two screenshots under public/images/web/<slug>-<shot.key>-{640,800,1280}.webp
+// (16:10). `loop` is an optional short muted video played on hover (desktop).
 export const clientProjects = [
-  {
-    name: "SusuKonnect",
-    slug: "susukonnect",
-    contribution:
-      "Built the platform from scratch, including product logic, UI implementation, development, QA, and KYC-related workflow implementation.",
-    url: "https://susukonnect.com/",
-    domain: "susukonnect.com",
-    category: "Fintech / Community savings",
-    description:
-      "A website for a group savings platform serving communities across Africa, the Caribbean, and the diaspora.",
-  },
   {
     name: "8K AI Films",
     slug: "8k-ai-films",
@@ -249,6 +239,42 @@ export const clientProjects = [
     category: "AI / Digital media",
     description:
       "An editorial website presenting film series, characters, and story timelines for an AI film brand.",
+    loop: "video/8k-ai-films-loop.mp4",
+    shots: [
+      {
+        key: "hero",
+        label: "Hero",
+        alt: "8K AI Films homepage: a film title set over footage of an aircraft above the clouds",
+      },
+      {
+        key: "inner",
+        label: "Scene",
+        alt: "8K AI Films story scene: a chapter title over footage of a truck leaving a cargo facility at dusk",
+      },
+    ],
+  },
+  {
+    name: "SusuKonnect",
+    slug: "susukonnect",
+    contribution:
+      "Built the platform from scratch, including product logic, UI implementation, development, QA, and KYC-related workflow implementation.",
+    url: "https://susukonnect.com/",
+    domain: "susukonnect.com",
+    category: "Fintech / Community savings",
+    description:
+      "A website for a group savings platform serving communities across Africa, the Caribbean, and the diaspora.",
+    shots: [
+      {
+        key: "hero",
+        label: "Hero",
+        alt: "SusuKonnect homepage: headline about digitized savings circles beside a sample circle dashboard",
+      },
+      {
+        key: "inner",
+        label: "Features",
+        alt: "SusuKonnect platform features section with six feature cards",
+      },
+    ],
   },
   {
     name: "AI InterConnect",
@@ -260,6 +286,18 @@ export const clientProjects = [
     category: "AI / B2B growth",
     description:
       "A business website presenting AI-powered outreach, sales workflows, and go-to-market services for B2B companies.",
+    shots: [
+      {
+        key: "hero",
+        label: "Hero",
+        alt: "AI InterConnect homepage: headline about executive relationships beside a list of three growth systems",
+      },
+      {
+        key: "inner",
+        label: "Packages",
+        alt: "AI InterConnect service packages section with three plan cards",
+      },
+    ],
   },
 ];
 

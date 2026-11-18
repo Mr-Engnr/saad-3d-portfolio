@@ -22,9 +22,9 @@ export default function App() {
         <Hero />
         <CaseStudy />
         <AISystems />
+        <WebBuilds />
         <AutomationSystems />
         <Works />
-        <WebBuilds />
         <Experience />
         <Testimonials />
         <About />

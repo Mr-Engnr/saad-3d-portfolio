@@ -11,7 +11,7 @@ export default function Works() {
     >
       <div className="container">
         <SectionHeading
-          number="04"
+          number="05"
           title="Engineering Projects"
           id="technical-title"
         >

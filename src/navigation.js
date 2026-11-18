@@ -11,7 +11,7 @@ export function initializeNavigation() {
       menu.querySelector("summary").focus();
     }
   };
-  // Deep links into a collapsed <details> (e.g. #client-work) open it.
+  // Deep links into a collapsed <details> (e.g. #black-rock-electric) open it.
   const openTargetDetails = () => {
     const id = decodeURIComponent(location.hash.slice(1));
     const target = id ? document.getElementById(id) : null;

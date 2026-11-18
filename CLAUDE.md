@@ -37,15 +37,16 @@ README.md               Human-facing project notes (content, build, image proven
 CLAUDE.md               This file
 
 src/
-  main.jsx              Entry. DEV: loads development.jsx (client React). PROD: runs initializeNavigation/Carousels/Reveal/Zoom()
+  main.jsx              Entry. DEV: loads development.jsx (client React). PROD: runs initializeNavigation/Carousels/Reveal/Zoom/HoverLoops()
   carousel.js           Plain-DOM enhancement for [data-carousel]: prev/next, "2 / 5" counter, arrow/Home/End keys, resize re-align
   reveal.js             Scroll reveals (fade + rise, IntersectionObserver). Only elements below the first screen; off under reduced motion
+  hoverloop.js          Hover loop for [data-hover-video] frames (8K AI Films card): desktop pointers only, off under reduced motion, video fetched on first hover
   zoom.js               Tap-to-enlarge: turns a[data-zoom] screenshot links into a native <dialog> lightbox (link opens the image without JS)
   development.jsx       Dev-only createRoot render of <App/> (StrictMode)
   entry-server.jsx      render() via renderToString, used by the build prerender
   App.jsx               Section order (skip link, Navbar, main sections, Footer)
   navigation.js         Progressive enhancement: closes mobile <details> menu on link click / Escape;
-                        opens a collapsed <details> when the URL hash targets it (e.g. #client-work)
+                        opens a collapsed <details> when the URL hash targets it (e.g. #black-rock-electric)
   site.js               Site config (name, title, description, url, email, socials, resume, calendly) + asset() helper
   index.css             ALL styles: @font-face, tokens, components, breakpoints, reduced-motion
   constants/index.js    ALL content data: blackRockCaseStudy, fxTradingAgent, aiProducts, clientProjects (web builds),
@@ -57,13 +58,13 @@ src/
                         driving laptop/phone device frames, facts row, <details> full case study (Problem, Key features)
     AISystems.jsx       02 AI Systems: FX Trading Agent case study (NDA wording) + product cards (feature rows / compact)
     Carousel.jsx        Static scroll-snap screenshot carousel (used by AI product feature rows with a `gallery`; none at the moment)
-    WebBuilds.jsx       05 Web builds: client websites in a collapsed native <details>
+    WebBuilds.jsx       03 Web builds: three open client-website cards (browser-frame screenshot, 2-image CSS radio switch, lightbox)
     Testimonials.jsx    Client feedback: CSS marquee of Fiverr reviews (duplicated, aria-hidden copy)
-    AutomationSystems.jsx 02 AI Automation Systems: grid of ProjectCard
-    Works.jsx           03 Engineering Projects: grid of ProjectCard + "More Projects" links
-    Experience.jsx      04 Experience timeline
-    About.jsx           05 About: portrait, facts, bio (copy is inline)
-    Contact.jsx         06 Contact: big headline, mailto, Calendly button, socials
+    AutomationSystems.jsx 04 AI Automation Systems: grid of ProjectCard
+    Works.jsx           05 Engineering Projects: grid of ProjectCard + "More Projects" links
+    Experience.jsx      06 Experience timeline
+    About.jsx           07 About: portrait, facts, bio (copy is inline)
+    Contact.jsx         08 Contact: big headline, mailto, Calendly button, socials
     Footer.jsx          Copyright (year fixed at build time), back-to-top
     ProjectCard.jsx     Card used by Automation + Engineering (image or architecture preview, tags, link);
                         exports isOrphan() so a lone last card spans the row (.technical-card-wide)
@@ -73,8 +74,10 @@ src/
 public/                 Copied verbatim to dist/
   images/               Optimized WebP previews (see §5 for naming)
     automation/         n8n workflow screenshots
+    web/                Web build screenshots: <slug>-{hero,inner}-{640,800,1280}.webp (16:10)
     hydroponics/        Hydroponics photos used by the card and ProjectDetails
     black-rock/         Black Rock launch screens, redacted copies: laptop screens 16:10 (640/800/1280), phone 5-mobile-phone-{348,696}
+  video/                8k-ai-films-loop.mp4 (6s muted hover loop, 720px wide, ~210 KB)
   fonts/                inter-latin.woff2 (variable 100–900) + OFL.txt
   og-image.png          1200×630 social share image
   favicon.svg, favicon-32.png, apple-touch-icon.png
@@ -102,9 +105,9 @@ Defined in `src/App.jsx`. The number in the heading eyebrow is hard-coded per co
 | — | Hero | `#top` | `Hero.jsx` | `site.js`, `reviewSummary` |
 | 01 | Flagship launch: Black Rock Electric | `#black-rock-electric` (opens the full case study); its heading is `#work` (nav target, does not open it) | `CaseStudy.jsx` | `blackRockCaseStudy` |
 | 02 | AI Systems | `#ai-systems` (FX `#fx-trading-agent`) | `AISystems.jsx` | `fxTradingAgent`, `aiProducts` (published only) |
-| 03 | AI Automation Systems | `#automation-systems` | `AutomationSystems.jsx` | `automationProjects` |
-| 04 | Engineering Projects | `#technical-work` | `Works.jsx` | `projects`, `additionalProjects` |
-| 05 | Web builds (collapsed) | `#client-work` (auto-opens) | `WebBuilds.jsx` | `clientProjects` |
+| 03 | Web builds (open, three cards) | `#client-work` | `WebBuilds.jsx` | `clientProjects` |
+| 04 | AI Automation Systems | `#automation-systems` | `AutomationSystems.jsx` | `automationProjects` |
+| 05 | Engineering Projects | `#technical-work` | `Works.jsx` | `projects`, `additionalProjects` |
 | 06 | Experience | `#experience` | `Experience.jsx` | `experiences` |
 | — | Client feedback / reviews | `#reviews` | `Testimonials.jsx` | `reviews`, `reviewSummary` |
 | 07 | About | `#about` | `About.jsx` | inline copy |
@@ -172,15 +175,12 @@ Rendering: a product with `gallery` (carousel) or `image` + `url` (browser previ
 6. **Carousel slides** (`gallery`): `src` is a path under `public/images/` without size or extension, e.g. `"black-rock/2-schedule"`. Provide `<src>-640.webp`, `-800.webp`, `-1280.webp` at **16:10** (640×400, 800×500, 1280×800), WebP quality ≈80. The frame is a fixed 16:10 box (`object-fit: cover`, top-aligned), so no layout shift. Captions are one short sentence; alt describes what is visible. Screenshots of private apps must be redacted copies (blur customer/staff names, addresses, emails, phones, codes, revenue) approved by the owner from a before/after contact sheet; never modify the source folders. Record provenance in `docs-private/image-provenance/<project>.md`, never in `public/` (publicly served) or other tracked files (the repo is public).
 7. The FX case study (`fxTradingAgent`) is a single object: `summary`, `engagement`, `role`, `tags`, `stages[{ name, detail, gate? }]` (the `gate: true` stage is highlighted), `safetyNote`. Client work under NDA: never add performance numbers or client names.
 
-### B. Web build row (`clientProjects`, collapsed under section 01)
+### B. Web build card (`clientProjects`, section 03)
 
-1. Append to `clientProjects` in `src/constants/index.js`. Fields: `name`, `slug`, `url`, `domain` (shown in the browser-chrome caption), `category`, `description`, `contribution` (owner-provided text). The collapsed row's summary line lists the names automatically.
-2. Images: three WebP screenshots of the site's homepage at **1280×900 aspect (64:45)**, named from `slug`:
-   - `public/images/<slug>-640.webp` (640×450)
-   - `public/images/<slug>-800.webp` (800×563)
-   - `public/images/<slug>-1280.webp` (1280×900)
-   - Capture at a 1280×900 viewport, top of page, scrollbar hidden (inject `::-webkit-scrollbar{display:none}`), then resize to WebP at quality ≈80. The frame uses `object-fit: cover; object-position: top`. Existing files are 17–70 KB.
-3. Rows alternate image side automatically (`:nth-child(even)`).
+1. Append to `clientProjects` in `src/constants/index.js` (array order = display order). Fields: `name`, `slug`, `url`, `domain` (shown in the frame bar), `category`, `description` (one line), `contribution` (owner-provided text), `shots` (exactly two: `[{ key, label, alt }]`, the first is shown by default), optional `loop` (path under `public/` to a short muted MP4 played on hover).
+2. Images: for each shot, `public/images/web/<slug>-<shot.key>-{640,800,1280}.webp` at **16:10** (640×400, 800×500, 1280×800), WebP quality ≈80. Capture at 1440×900 with the scrollbar and any chat widget or cookie banner hidden. OCR every capture and avoid sections that show real people's names, emails or phones.
+3. The grid is 3 columns on desktop, one horizontal card per row at ≤1023px, and a single stacked column at ≤767px. Three cards fill the desktop row; a fourth would need a layout decision.
+4. Hover loop (`loop`): keep it under 1.5 MB, no audio. `src/hoverloop.js` only creates the `<video>` on the first hover, on desktop pointers at ≥1024px and never under `prefers-reduced-motion`, so phones never request the file.
 
 ### C. "More Projects" text links
 
@@ -241,9 +241,11 @@ Hard-coded supporting shades (not tokenized): image wells `#202023`, caption bar
 
 **Launch components:** `.launch-head` (centred eyebrow, `.launch-title`, `.launch-value`), `.launch-system` (grid: `.piece-map` 0.31fr, min 270px | `.launch-stage` 1fr; ≤1023px the map becomes a horizontal pill row above the stage). The piece map is a plain list with no boxes: `.map-piece` = title (`.map-name`, muted, brighter on hover/focus) + one short `.map-line` (piece `line`, max ~8 words); selected = `#1b1b1e` fill + 2px lavender inset bar + white title. `.map-host` = small muted `.map-host-label` (`hostingLabel`) + `.map-host-items` with a 1px `#3a3940` vertical line beside the hosted pieces. `.map-piece-planned` (3D rooms) is dimmed with a `.map-status` "Planned" tag, never interactive. Stacks are not in the map: each view shows its piece's `stack` as `.tags.view-stack` chips under the detail, so only the selected piece's stack is visible. `.launch-stage` (`#1a1a1d`, radius 20px), `.device-laptop` / `.device-phone` (`#0b0b0c` bezel, 1px `#2c2c30` inner line, soft shadow), `.screen-switch` (pill), `.launch-facts`, `.case-details` (Problem, Key features, Hosting), `.lightbox` (native dialog).
 
+**Web builds components:** `.web-grid`, `.web-card` (surface + the only 1px border; the screenshot sits flush, no inner boxes), `.web-frame-bar` (three dots + domain), `.web-shots` (fixed 16:10; `.web-shot-1/2` toggled by `.web-radio-1/2:checked`), `.web-switch` (two text labels with a dot, lavender when selected, 44px targets), `.web-copy` (category 12px, h3 20px, value 14px, contribution 13px, Visit site link), `.web-loop` (hover video, fades in once playing). Deliberately lighter than the AI Systems cards.
+
 **Full case study** (inside the launch): `.case-details` (summary with the chevron beside the label, label swaps Read/Hide), `.case-body`, `.case-block` (1px dividers, h3 22px), `.case-lead`, `.case-features` (2 columns, 1 on mobile).
 
-**AI Systems components:** `.fx-case` (surface card: head grid plus a `--bg` pipeline band), `.pipeline` (5-column `<ol>` that stacks into rows at ≤1023px; the gate stage gets a 1px accent outline and an accent-tinted ground `color-mix(accent 9%, bg)` ≈ `#1f1d26`), `.status-badge` (11px accent text, 1px 45%-accent border, 3px radius, nowrap), `.product-card` / `.product-card-compact`, `.web-builds` + `.web-builds-details` (summary styled like `.button-small`, label swaps Show/Hide, chevron rotates). `color-scheme: dark` is set on `:root`.
+**AI Systems components:** `.fx-case` (surface card: head grid plus a `--bg` pipeline band), `.pipeline` (5-column `<ol>` that stacks into rows at ≤1023px; the gate stage gets a 1px accent outline and an accent-tinted ground `color-mix(accent 9%, bg)` ≈ `#1f1d26`), `.status-badge` (11px accent text, 1px 45%-accent border, 3px radius, nowrap), `.product-card` / `.product-card-compact`. `color-scheme: dark` is set on `:root`.
 
 **Components/patterns:** `SectionHeading` (eyebrow + H2 + optional intro), `ExternalLink` (always `target=_blank rel="noopener noreferrer"` with an "(opens in a new tab)" aria-label), `.button` / `.button-primary` / `.button-quiet` / `.button-small`, `.tags`, `.architecture` flow chips, `.text-link`. Use `asset("images/…")` from `site.js` for public paths.
 
@@ -267,11 +269,11 @@ Hard-coded supporting shades (not tokenized): image wells `#202023`, caption bar
 | HealthPrep AI (text-only row: highlights + stack; screenshot TODO) | yes | https://www.healthprep-ai.com/ |
 | EIDOPHOR Voice / MyVoiceAgent | no (`published: false` until highlights, stack and link exist) | TBD |
 
-**Web builds** (`clientProjects`, collapsed)
+**Web builds** (`clientProjects`, section 03, open cards; hero + one inner screenshot each)
 | Project | Category | Live link |
 |---|---|---|
+| 8K AI Films (hover loop) | AI / Digital media | https://8kaifilms.com/ |
 | SusuKonnect | Fintech / Community savings | https://susukonnect.com/ |
-| 8K AI Films | AI / Digital media | https://8kaifilms.com/ |
 | AI InterConnect | AI / B2B growth | https://www.aiinterconnect.com/ |
 
 **AI Automation Systems** (`automationProjects`)
@@ -324,3 +326,4 @@ Hard-coded supporting shades (not tokenized): image wells `#202023`, caption bar
 - 2026-11-18: Piece map simplified: no boxes, title + one short line per piece, selected = subtle fill + 2px lavender bar + white title, hosting shown as a small label and a vertical line, 3D rooms dimmed with a Planned tag. Stacks moved to chips under the stage (selected piece only); the full hosting sentence moved into the full case study.
 - 2026-11-18: Hero and first screen simplified: hero = eyebrow, H1, subline, CTA (button + Resume text link), trust line; socials and the "What I build with" row removed (`Capabilities.jsx` deleted). Flagship title about 65% of the hero H1; section and card titles scaled under it. Nav: Work, Experience, About, Contact + Resume (Work → `#work` on the flagship heading; AI Systems is now `#ai-systems`; menu only ≤767px). One page tone, one card surface (`#1c1c1f`), no muted bands. Glow a little stronger.
 - 2026-11-18: Cleanup. Customer-support screenshots re-cut without the browser address bar and with the mock customer's name blurred. EIDOPHOR Voice hidden (`published: false`) until it has highlights, a stack and a link.
+- 2026-11-18: Web builds upgraded (branch `web-builds`): now section 03, open, directly under AI Systems (Automation → 04, Engineering → 05). Three small cards with fresh 1440×900 captures (hero + one inner section each, `public/images/web/`), a two-image CSS radio switch, the shared lightbox, and a hover loop on the 8K AI Films card (`src/hoverloop.js`, `public/video/`). The collapsed `<details>` row and the old 1280×900 previews are gone; `#client-work` stays as the section id.
