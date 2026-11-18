@@ -1,3 +1,232 @@
+// ---------------------------------------------------------------------------
+// 01 / AI Systems & Products. Source of truth: docs-private/ (local only).
+// Never publish placeholder text. A missing link, stack, or image is left as
+// a TODO comment here and the field is omitted, so the card renders without it.
+// ---------------------------------------------------------------------------
+
+// Flagship case study. Delivered for a paying client under NDA:
+// no client name, no performance numbers, no screenshots of the live system.
+export const fxTradingAgent = {
+  name: "News-Driven FX Trading Agent",
+  slug: "fx-trading-agent",
+  category: "Agentic AI · Financial systems",
+  summary:
+    "An autonomous FX trading system that reads live financial news, has an LLM judge each opportunity, and sends orders through Interactive Brokers only after they clear a dedicated safety layer.",
+  engagement: "Delivered for a paying client. Details under NDA.",
+  role: "AI Agent Developer & System Architect",
+  tags: ["Python", "OpenAI API", "Interactive Brokers API", "LSEG Eikon"],
+  stages: [
+    {
+      name: "News Agent",
+      detail: "Reads live financial news from LSEG Eikon.",
+    },
+    {
+      name: "LLM Judge",
+      detail: "An LLM evaluates each item as a possible trade.",
+    },
+    {
+      name: "Safety Layer",
+      detail:
+        "Validation and safety checks gate every proposed order before it can reach the broker.",
+      gate: true,
+    },
+    {
+      name: "Execution",
+      detail: "Orders that pass are sent through the Interactive Brokers API.",
+    },
+    {
+      name: "Post-Trade Review",
+      detail: "Every executed trade is reviewed after the fact.",
+    },
+  ],
+  safetyNote:
+    "The LLM proposes. It never places an order directly: every trade has to clear the safety layer first.",
+};
+
+// ---------------------------------------------------------------------------
+// 01 / Flagship case study: Black Rock Electric (in-page, #black-rock-electric).
+// Facts only from docs-private/ (local only); content rules in
+// docs-private/client-rules.md. Never name the end client's building or its
+// owner; never link the private portal.
+// ---------------------------------------------------------------------------
+export const blackRockCaseStudy = {
+  name: "Black Rock Electric",
+  slug: "black-rock-electric",
+  category: "Website · Crew portal · Building monitoring",
+  status: "In active development",
+  summary:
+    "A website, a custom crew portal, and building monitoring for an electrical contractor in Colorado, built as connected pieces.",
+  role: "Developer for the full project, in a phased engagement.",
+  url: "https://blackrockelectric.pro/",
+  domain: "blackrockelectric.pro",
+  problem:
+    "The contractor’s crews ran on off-the-shelf software. This project replaces it with a custom crew portal, alongside a new website and building monitoring for a mountain resort property in Colorado.",
+  // The launch section's piece map, in display order. Each piece has a short
+  // `line` for the map and a `stack` shown as chips under the stage; screens are owner-approved redacted copies (provenance in
+  // docs-private/). Laptop screens: public/images/<src>-{640,800,1280}.webp at
+  // 16:10. Phone screen: <src>-{348,696}.webp.
+  pieces: [
+    {
+      key: "portal",
+      name: "Crew portal",
+      detail:
+        "A custom crew portal replacing the client’s previous off-the-shelf software. Installable as a PWA.",
+      line: "Scheduling, estimates, time clock",
+      stack: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind",
+        "Installable PWA",
+        "Supabase (Postgres, Auth, row-level security, Realtime, Storage, Edge Functions)",
+        "Resend email",
+      ],
+      hosted: true,
+      screens: [
+        {
+          key: "schedule",
+          label: "Schedule",
+          frame: "laptop",
+          src: "black-rock/2-schedule",
+          caption: "Crew portal schedule, week view. Customer details blurred.",
+          alt: "Crew portal schedule in week view with job cards on each day; customer names and notes are blurred",
+        },
+        {
+          key: "estimate",
+          label: "Estimate",
+          frame: "laptop",
+          src: "black-rock/3-estimate",
+          caption:
+            "Crew portal estimate with line items and a total. Customer details blurred.",
+          alt: "Crew portal estimate builder showing services, prices, and a total; the customer name and address are blurred",
+        },
+      ],
+    },
+    {
+      key: "monitoring",
+      name: "Building monitoring",
+      detail:
+        "Live sensor status, alerts, and device tags for a mountain resort property in Colorado.",
+      line: "Live sensor status, alerts, device tags",
+      stack: ["FastAPI", "Postgres with TimescaleDB", "Redis"],
+      hosted: true,
+      screens: [
+        {
+          key: "dashboard",
+          frame: "laptop",
+          src: "black-rock/4-monitoring",
+          caption:
+            "Monitoring dashboard: live sensor status and alerts (sample building).",
+          alt: "Building monitoring dashboard for a sample site, with a water-detected alert, a heat-tape warning, and sensor tiles grouped by room",
+        },
+        {
+          key: "mobile",
+          frame: "phone",
+          src: "black-rock/5-mobile-phone",
+          caption: "Building monitoring on mobile.",
+          alt: "Phone screen showing a building’s sensors, with a flood sensor alert at the top",
+        },
+      ],
+    },
+    {
+      key: "website",
+      name: "Website",
+      detail: "The public website, live at blackrockelectric.pro.",
+      line: "The public site, blackrockelectric.pro",
+      stack: ["Astro", "Tailwind CSS v4", "Netlify", "GitHub Actions"],
+      screens: [
+        {
+          key: "website",
+          frame: "laptop",
+          src: "black-rock/1-website",
+          caption: "The public website, blackrockelectric.pro.",
+          alt: "Black Rock Electric website homepage with the headline “Your Reliable Electrician in Summit County” and a contact form",
+        },
+      ],
+    },
+    {
+      key: "rooms",
+      name: "3D rooms",
+      detail: "Scoped, early work only.",
+      line: "Scoped, early work only",
+      status: "Planned",
+      screens: [],
+    },
+  ],
+  // Short label beside the hosted pieces in the map; the full sentence is in
+  // the full case study.
+  hostingLabel: "Hosted on DigitalOcean, behind Caddy",
+  hosting:
+    "The portal and monitoring run on a DigitalOcean server behind Caddy, in the client’s name.",
+  features: [
+    {
+      group: "Crew portal",
+      items: [
+        "Scheduling with day, week, and month views",
+        "Drag to reschedule",
+        "Double-booking warnings",
+        "Time clock",
+        "Estimates",
+        "Invoicing",
+      ],
+    },
+    {
+      group: "Building monitoring",
+      items: ["Live sensor status", "Alerts", "Device tags"],
+    },
+  ],
+};
+
+// Product cards, in display order. `published: false` keeps a card in the
+// data but out of the rendered page. Images follow the client-preview set:
+// public/images/<slug>-640|800|1280.webp at 1280×900.
+export const aiProducts = [
+  {
+    name: "HealthPrep AI",
+    slug: "healthprep-ai",
+    published: true,
+    category: "AI · Exam prep",
+    description:
+      "AI-powered board exam prep with NGN-style practice questions, instant rationales, and structured study programs.",
+    contribution: "Built the whole site.",
+    highlights: [
+      "A 2,000+ question NCLEX RN/PN bank, with new questions generated live by Claude when needed.",
+      "A server-side paywall, so only paying users get questions.",
+      "Self-serve billing.",
+    ],
+    stack: [
+      { name: "Next.js", detail: "API routes" },
+      { name: "Supabase", detail: "Postgres, Auth" },
+      { name: "Claude", detail: "via the Anthropic API" },
+      {
+        name: "Stripe",
+        detail: "subscriptions, trial, webhooks, billing portal",
+      },
+      { name: "Vercel" },
+    ],
+    url: "https://www.healthprep-ai.com/",
+    domain: "healthprep-ai.com",
+    // TODO(owner): supply an inside-product screenshot (study dashboard or a
+    // question with its rationale), then add `image` (1280×900 WebP set).
+    // Content rules for this card: docs-private/client-rules.md.
+  },
+  {
+    name: "EIDOPHOR Voice",
+    slug: "eidophor-voice",
+    // Hidden until it has highlights, a stack and a live link (see
+    // docs-private/projects-inventory.md).
+    published: false,
+    category: "AI voice agent",
+    description:
+      "An AI receptionist that answers a business's calls. Also known as MyVoiceAgent.",
+    // Renders as a typographic sheet (title + value only until these exist):
+    // TODO(owner): 3 `highlights`, `stack` ([{ name, detail? }]), live `url` +
+    // `domain`, optional `contribution`. Screenshot → `image` (1280×900 set).
+  },
+];
+
+// Web builds: client websites, shown in the collapsed "Web builds" row of
+// section 01.
 export const clientProjects = [
   {
     name: "SusuKonnect",
@@ -133,24 +362,8 @@ const hydroponicsProject = {
   },
 };
 
+// The FX Trading Agent moved to `flagshipSystem` (section 01).
 export const automationProjects = [
-  {
-    name: "News-Driven FX Trading Agent",
-    category: "Agentic AI · Financial Systems",
-    description:
-      "An autonomous FX trading system that processes live financial news, evaluates trading opportunities with an LLM, applies validation and safety checks, and sends orders through Interactive Brokers.",
-    architecture: [
-      "News Agent",
-      "LLM Judge",
-      "Safety Layer",
-      "Execution",
-      "Post-Trade Review",
-    ],
-    role: "AI Agent Developer & System Architect",
-    tags: ["Python", "OpenAI API", "Interactive Brokers API", "LSEG Eikon"],
-    image: null,
-    url: null,
-  },
   {
     name: "AI Lead Auto-Reply & Follow-Up",
     category: "AI Automation · Lead Management",

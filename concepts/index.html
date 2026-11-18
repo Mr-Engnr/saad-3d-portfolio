@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Redesign concepts</title>
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      main {
+        padding: 80px 0;
+      }
+      h1 {
+        font-size: clamp(36px, 5vw, 64px);
+        letter-spacing: -0.05em;
+        line-height: 1;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 40px 0 0;
+        display: grid;
+        gap: 10px;
+      }
+      a.item {
+        display: block;
+        padding: 20px 24px;
+        background: var(--surface);
+        border-radius: 14px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      a.item span {
+        display: block;
+        margin-top: 4px;
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--muted);
+      }
+      a.item:hover {
+        background: #1d1d20;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Hero + first scroll, three concepts</h1>
+      <ul>
+        <li><a class="item" href="./a.html">A. Cinematic dark<span>Deep field, soft glow, huge centred headline; the crew portal rises in a laptop with the monitoring phone as you scroll.</span></a></li>
+        <li><a class="item" href="./b.html">B. Calm minimal<span>Near-black, generous space, one accent; Apple-style centred product title and a stage with a screen switcher.</span></a></li>
+        <li><a class="item" href="./c.html">C. System map<span>The flagship's four connected pieces are the control: pick a piece, see its real screen. Work lands in the first screen.</span></a></li>
+      </ul>
+    </main>
+  </body>
+</html>

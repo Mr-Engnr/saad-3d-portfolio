@@ -1,8 +1,9 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import ClientWorks from "./components/ClientWorks";
+import CaseStudy from "./components/CaseStudy";
+import AISystems from "./components/AISystems";
+import WebBuilds from "./components/WebBuilds";
 import Testimonials from "./components/Testimonials";
-import Capabilities from "./components/Capabilities";
 import Works from "./components/Works";
 import AutomationSystems from "./components/AutomationSystems";
 import Experience from "./components/Experience";
@@ -19,12 +20,13 @@ export default function App() {
       <Navbar />
       <main id="main">
         <Hero />
-        <Capabilities />
-        <ClientWorks />
-        <Testimonials />
+        <CaseStudy />
+        <AISystems />
         <AutomationSystems />
         <Works />
+        <WebBuilds />
         <Experience />
+        <Testimonials />
         <About />
         <Contact />
       </main>

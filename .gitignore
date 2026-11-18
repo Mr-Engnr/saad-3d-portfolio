@@ -35,3 +35,14 @@ archive/
 
 # Claude Code local tooling (skills, local settings)
 .claude/
+
+# Playwright MCP logs and local audit screenshots
+.playwright-mcp/
+audit/
+
+# Local AI tooling (skills, hooks), not part of the site
+.agents/
+.codex/
+
+# Client-private notes (facts, rules, provenance). Local only, never commit.
+docs-private/

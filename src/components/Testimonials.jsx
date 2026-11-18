@@ -28,7 +28,7 @@ function ReviewCard({ review, hidden = false }) {
 export default function Testimonials() {
   return (
     <section
-      className="section section-compact section-muted testimonials"
+      className="section section-compact testimonials"
       id="reviews"
       aria-labelledby="reviews-title"
     >

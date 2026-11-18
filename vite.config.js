@@ -22,6 +22,14 @@ const schema = {
     url: site.url,
     sameAs: [site.github, site.linkedin, site.fiverr].filter(Boolean),
   },
+  hasPart: {
+    "@type": "CreativeWork",
+    "@id": site.url + "#" + site.caseStudy.anchor,
+    url: site.url + "#" + site.caseStudy.anchor,
+    name: site.caseStudy.name,
+    description: site.caseStudy.description,
+    creator: { "@id": site.url + "#person" },
+  },
 };
 export default defineConfig(({ mode }) => ({
   plugins: [

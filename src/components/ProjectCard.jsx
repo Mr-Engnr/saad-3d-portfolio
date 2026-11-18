@@ -9,21 +9,42 @@ function Architecture({ steps, preview = false }) {
     >
       <p className="eyebrow">System architecture</p>
       <ol aria-label="Architecture flow">
+        {/* The arrow leads each step after the first, so a wrapped line
+            starts with "→ Step" instead of ending on a dangling arrow. */}
         {steps.map((step, index) => (
           <li key={step}>
-            <span>{step}</span>
-            {index < steps.length - 1 && (
+            {index > 0 && (
               <span className="flow-arrow" aria-hidden="true">
                 →
               </span>
             )}
+            <span className="flow-step">{step}</span>
           </li>
         ))}
       </ol>
     </div>
   );
 }
-export default function ProjectCard({ project }) {
+// A non-featured card left alone on the last row of a 2-column grid.
+export function isOrphan(project, list) {
+  const regular = list.filter((item) => !item.featured);
+  return (
+    !project.featured &&
+    regular.length % 2 === 1 &&
+    project === regular[regular.length - 1]
+  );
+}
+// Tags that already appear as an architecture step ("Gmail", or a part of
+// "Form / Gmail") are not repeated as chips.
+function uniqueTags(project) {
+  const steps = (project.architecture || [])
+    .flatMap((step) => step.split(" / "))
+    .map((step) => step.trim().toLowerCase());
+  return project.tags.filter((tag) => !steps.includes(tag.toLowerCase()));
+}
+
+export default function ProjectCard({ project, wide = false }) {
+  const tags = uniqueTags(project);
   const previewUrl = project.imageFull
     ? asset(`images/${project.imageFull}.webp`)
     : project.url;
@@ -38,7 +59,7 @@ export default function ProjectCard({ project }) {
     : {};
   return (
     <article
-      className={`technical-card${project.featured ? " technical-card-featured" : ""}`}
+      className={`technical-card${project.featured ? " technical-card-featured" : ""}${wide ? " technical-card-wide" : ""}`}
     >
       {project.image ? (
         <ImageContainer className="technical-image" {...linkProps}>
@@ -74,11 +95,13 @@ export default function ProjectCard({ project }) {
         {project.image && project.architecture && (
           <Architecture steps={project.architecture} />
         )}
-        <ul className="tags" aria-label="Technologies">
-          {project.tags.map((tag) => (
-            <li key={tag}>{tag}</li>
-          ))}
-        </ul>
+        {tags.length > 0 && (
+          <ul className="tags" aria-label="Technologies">
+            {tags.map((tag) => (
+              <li key={tag}>{tag}</li>
+            ))}
+          </ul>
+        )}
         {project.url && (
           <ExternalLink
             href={project.url}

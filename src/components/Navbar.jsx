@@ -1,9 +1,17 @@
 import { site } from "../site";
 import { Arrow } from "./Shared";
 
+// "Work" lands on the flagship's heading (#work), the start of the case study
+// and project sections, without auto-opening the full case study.
+const navigation = [
+  { label: "Work", href: "#work" },
+  { label: "Experience", href: "#experience" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+];
 function NavigationLinks() {
-  return ["Work", "Experience", "About", "Contact"].map((label) => (
-    <a key={label} href={`#${label.toLowerCase()}`}>
+  return navigation.map(({ label, href }) => (
+    <a key={label} href={href}>
       {label}
     </a>
   ));

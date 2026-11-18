@@ -11,10 +11,21 @@ export function initializeNavigation() {
       menu.querySelector("summary").focus();
     }
   };
+  // Deep links into a collapsed <details> (e.g. #client-work) open it.
+  const openTargetDetails = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const target = id ? document.getElementById(id) : null;
+    const details =
+      target?.querySelector("details") || target?.closest("details");
+    if (details) details.open = true;
+  };
+  openTargetDetails();
   document.addEventListener("click", closeOnLink);
   document.addEventListener("keydown", closeOnEscape);
+  window.addEventListener("hashchange", openTargetDetails);
   return () => {
     document.removeEventListener("click", closeOnLink);
     document.removeEventListener("keydown", closeOnEscape);
+    window.removeEventListener("hashchange", openTargetDetails);
   };
 }

@@ -25,7 +25,8 @@ The preview path follows the production URL in `src/site.js`. With the current p
 ## Content
 
 - `src/site.js`: name, production URL, email, GitHub, optional LinkedIn and resume.
-- `src/constants/index.js`: client work, technical projects, and experience.
+- `src/constants/index.js`: AI systems and products, web builds, automation and engineering projects, and experience.
+- `docs-private/` (gitignored, local only): project facts, client content rules, and image provenance. The repository is public, so client-private details stay there.
 - `src/components/`: page sections.
 - `src/index.css`: responsive layout and design tokens.
 - `public/images/`: optimized project previews.
@@ -41,7 +42,7 @@ The Hydroponics project is published first in Engineering Projects. Its native P
 
 `npm run build` builds the client bundle and prerenders the full React page. Metadata and JSON-LD derive from `src/site.js`. The build regenerates `public/robots.txt` and `public/sitemap.xml` from the same URL. If hosting under a path, publish robots.txt at the origin root as well where hosting permits.
 
-The production artifact is `dist/`. The old tracked `docs/` build and unused assets are preserved under `archive/legacy/`, outside the production build. Configure the host to build with `npm run build` and serve `dist/`; do not deploy until the domain and content are approved.
+The production artifact is `dist/`. The old tracked `docs/` build and unused assets are preserved under `archive/legacy/`, outside the production build. The site is live at https://saadsafdar.dev/ on Vercel, which builds with `npm run build` and serves `dist/`.
 
 Images use local WebP variants, fixed dimensions, and lazy loading. Inter is self-hosted with its OFL license. The hero has no image dependency. Reduced-motion preferences disable transitions and smooth scrolling.
 

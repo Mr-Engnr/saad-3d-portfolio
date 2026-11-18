@@ -1,35 +1,41 @@
 import { projects, additionalProjects } from "../constants";
 import { ExternalLink, SectionHeading } from "./Shared";
-import ProjectCard from "./ProjectCard";
+import ProjectCard, { isOrphan } from "./ProjectCard";
 
 export default function Works() {
   return (
     <section
-      className="section container"
+      className="section"
       id="technical-work"
       aria-labelledby="technical-title"
     >
-      <SectionHeading
-        number="03"
-        title="Engineering Projects"
-        id="technical-title"
-      >
-        Technical work in machine learning, data engineering, and cloud
-        infrastructure.
-      </SectionHeading>
-      <div className="technical-grid">
-        {projects.map((project) => (
-          <ProjectCard key={project.name} project={project} />
-        ))}
-      </div>
-      <div className="additional-work">
-        <p>More Projects</p>
-        <div>
-          {additionalProjects.map((project) => (
-            <ExternalLink key={project.name} href={project.url}>
-              {project.name}
-            </ExternalLink>
+      <div className="container">
+        <SectionHeading
+          number="04"
+          title="Engineering Projects"
+          id="technical-title"
+        >
+          Technical work in machine learning, data engineering, and cloud
+          infrastructure.
+        </SectionHeading>
+        <div className="technical-grid">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.name}
+              project={project}
+              wide={isOrphan(project, projects)}
+            />
           ))}
+        </div>
+        <div className="additional-work">
+          <p>More Projects</p>
+          <div>
+            {additionalProjects.map((project) => (
+              <ExternalLink key={project.name} href={project.url}>
+                {project.name}
+              </ExternalLink>
+            ))}
+          </div>
         </div>
       </div>
     </section>
