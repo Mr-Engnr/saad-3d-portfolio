@@ -1,4 +1,33 @@
-import { site } from "../site";
+import { site, asset } from "../site";
+
+// Screenshot of a live site in a browser-chrome frame. Expects the
+// public/images/<slug>-640|800|1280.webp set (1280×900).
+export function BrowserPreview({ project, sizes, className = "" }) {
+  return (
+    <a
+      className={`client-preview ${className}`}
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${project.domain}: visit ${project.name} (opens in a new tab)`}
+    >
+      <div className="preview-caption">
+        <span>{project.domain}</span>
+        <span aria-hidden="true">↗</span>
+      </div>
+      <img
+        src={asset(`images/${project.slug}-1280.webp`)}
+        srcSet={`${asset(`images/${project.slug}-640.webp`)} 640w, ${asset(`images/${project.slug}-800.webp`)} 800w, ${asset(`images/${project.slug}-1280.webp`)} 1280w`}
+        sizes={sizes}
+        width="1280"
+        height="900"
+        alt={`${project.name} website homepage`}
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+  );
+}
 
 export function Arrow({ diagonal = true }) {
   return (

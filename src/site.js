@@ -2,7 +2,14 @@ export const site = {
   name: "Rana Saad Safdar",
   title: "Rana Saad Safdar | AI & Automation Engineer",
   description:
-    "AI & Automation Engineer building AI agents, automated workflows, and web applications for clients, and coaching founders to ship their own with Claude Code.",
+    "AI & Automation Engineer. I build AI systems that run real businesses, from crew portals to live building monitoring. Case study: Black Rock Electric.",
+  // In-page flagship case study (#black-rock-electric). Used in JSON-LD.
+  caseStudy: {
+    name: "Black Rock Electric case study",
+    anchor: "black-rock-electric",
+    description:
+      "A website, a custom crew portal, and building monitoring for an electrical contractor in Colorado.",
+  },
   // Production origin. Used for canonical, Open Graph, JSON-LD, robots, and sitemap.
   url: "https://saadsafdar.dev/",
   email: "ranasaad727@gmail.com",

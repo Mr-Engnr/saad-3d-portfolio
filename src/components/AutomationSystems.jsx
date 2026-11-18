@@ -1,17 +1,17 @@
 import { automationProjects } from "../constants";
 import { SectionHeading } from "./Shared";
-import ProjectCard from "./ProjectCard";
+import ProjectCard, { isOrphan } from "./ProjectCard";
 
 export default function AutomationSystems() {
   return (
     <section
-      className="section section-muted"
+      className="section"
       id="automation-systems"
       aria-labelledby="automation-title"
     >
       <div className="container">
         <SectionHeading
-          number="02"
+          number="03"
           title="AI Automation Systems"
           id="automation-title"
         >
@@ -20,7 +20,11 @@ export default function AutomationSystems() {
         </SectionHeading>
         <div className="technical-grid">
           {automationProjects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
+            <ProjectCard
+              key={project.name}
+              project={project}
+              wide={isOrphan(project, automationProjects)}
+            />
           ))}
         </div>
       </div>

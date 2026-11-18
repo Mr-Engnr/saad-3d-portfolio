@@ -1,41 +1,41 @@
-import { Arrow, SocialLinks } from "./Shared";
+import { Arrow } from "./Shared";
 import { reviewSummary } from "../constants";
 import { site, asset } from "../site";
+
+// Centred hero: eyebrow, headline, subline, CTA row, trust line. Kept short so
+// the flagship title and the top of its laptop show in the first screen at
+// 1440x900 and 1366x768. The soft glow behind the headline is the page's only
+// gradient (.hero::before).
 export default function Hero() {
   return (
-    <section className="hero container" id="top" aria-labelledby="hero-title">
-      <p className="eyebrow hero-eyebrow">
-        Computer engineer <span aria-hidden="true">·</span> AI & Automation
-      </p>
-      <h1 id="hero-title">
-        I build AI agents
-        <br /> and teach you to <span>ship your own.</span>
-      </h1>
-      <div className="hero-bottom">
-        <div>
-          <p className="hero-description">
-            I'm Saad Safdar, an AI & Automation Engineer. I build AI agents,
-            automated workflows, and web apps for clients, and I coach founders
-            through building their own with Claude Code.
-          </p>
-          <div className="hero-ctas">
-            <a className="button button-primary" href="#work">
-              View my work
-              <Arrow diagonal={false} />
-            </a>
-            <a
-              className="button button-quiet"
-              href={site.calendly}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Book a call (opens in a new tab)"
-            >
-              Book a call
-              <Arrow />
-            </a>
-          </div>
+    <section className="hero" id="top" aria-labelledby="hero-title">
+      <div className="container hero-inner">
+        <p className="eyebrow hero-eyebrow">
+          Computer engineer <span aria-hidden="true">·</span> AI & Automation
+        </p>
+        <h1 id="hero-title">
+          I build AI systems that run <span>real businesses.</span>
+        </h1>
+        <p className="hero-description">
+          From crew portals to live building monitoring, I design, build and
+          ship the whole system.
+        </p>
+        <div className="hero-ctas">
+          <a className="button button-primary" href="#black-rock-electric">
+            View case study
+            <Arrow diagonal={false} />
+          </a>
+          <a
+            className="hero-text-link"
+            href={site.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View resume PDF (opens in a new tab)"
+          >
+            Resume <span aria-hidden="true">↗</span>
+          </a>
         </div>
-        <div className="hero-aside">
+        <p className="hero-trust">
           <a className="hero-proof" href="#reviews">
             <img
               className="hero-portrait"
@@ -45,16 +45,14 @@ export default function Hero() {
               alt=""
               decoding="async"
             />
-            <span>
-              <span className="stars" aria-hidden="true">
-                ★★★★★
-              </span>
-              {reviewSummary.average} average across {reviewSummary.count}{" "}
-              {reviewSummary.platform} reviews
-            </span>
+            {reviewSummary.average} from {reviewSummary.count}{" "}
+            {reviewSummary.platform} reviews
           </a>
-          <SocialLinks resume />
-        </div>
+          <span className="hero-trust-dot" aria-hidden="true">
+            ·
+          </span>
+          <a href="#contact">Also coaching founders on Claude Code</a>
+        </p>
       </div>
     </section>
   );

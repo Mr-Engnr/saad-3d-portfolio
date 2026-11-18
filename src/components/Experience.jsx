@@ -7,7 +7,7 @@ export default function Experience() {
       id="experience"
       aria-labelledby="experience-title"
     >
-      <SectionHeading number="04" title="Experience" id="experience-title" />
+      <SectionHeading number="06" title="Experience" id="experience-title" />
       <div className="experience-list">
         {experiences.map((item) => (
           <article className="experience-row" key={item.company}>

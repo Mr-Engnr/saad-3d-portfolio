@@ -7,7 +7,7 @@ export default function Contact() {
       id="contact"
       aria-labelledby="contact-title"
     >
-      <p className="eyebrow">06 / Let's talk</p>
+      <p className="eyebrow">08 / Let's talk</p>
       <h2 id="contact-title">
         Let’s build
         <br /> something useful.
